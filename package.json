@@ -1,0 +1,31 @@
+{
+  "name": "106",
+  "description": "Log library with sequences and colors, for node.js and browsers",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": "Gustaf Räntilä <g.rantila@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grantila/106.git"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "log",
+    "node",
+    "browser",
+    "colors",
+    "sequences"
+  ],
+  "dependencies": {
+    "ansi-styles": "^2.2.0",
+    "winston": "^2.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "timekeeper": "0.0.5"
+  },
+  "main": "./node.js",
+  "browser": "./browser.js"
+}
