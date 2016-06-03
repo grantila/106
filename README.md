@@ -15,6 +15,8 @@ When any kind of asynchronous operation take place, log lines get interleaved. T
 
 To follow logs and see what lines are part of a certain code flow (a client-side outgoing call, or a server-side incoming request, e.g.), the concept of unique tags (or "sequences") help out a lot. Consider an HTTP server getting a request, performing multiple asynchronous tasks (like database operations) and then responding back. All things which get logged here, will be interleaved with other requests.
 
+You also have the possibility to add your own custom transports (e.g. to automatically send log errors from the browser to the server).
+
 # API
 
 The API works the same in the browser as well as in node.js.
@@ -85,3 +87,32 @@ All logging using a sequence will print the time since the sequence was created.
 ```
 
 The above will be colored, and each sequence will get its own color (circulating between a few pre-defined colors). Again, this applies to node.js as well as browsers!
+
+## Custom transports
+
+To add a custom transport, you create your own callback function, and call `addTransport( )` on the logger. You can also set your own log-level using the second (optional) argument, so that this transport only get certain logs.
+
+```js
+var logger = require( '106' );
+var log = logger( 'foo' );
+
+function customTransport( logData )
+{
+    logData.level;             // The log level, 'info', 'warn', etc
+    logData.messages;          // The message parts (as an array)
+    logData.meta;              // The last argument to log() if it's an
+                               // object or array, and not covered by a '%s'.
+    logData.prefix;            // The prefix ('foo' in this example)
+    logData.sequence;          // The sequence (or null)
+    logData.sequenceDirection; // The sequence direction (or null)
+    logData.time;              // The time (as a javascript Date object)
+    logData.timestamp;         // The time as an ISO-formatted string
+}
+
+// Forward error logs to "customTransport"
+logger.addTransport( customTransport, { level: 'warn' } );
+
+log.error( "This will be sent to the custom logger" );
+log.warn( "And this" );
+log.info( "But this won't" );
+```
