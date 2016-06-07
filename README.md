@@ -100,6 +100,8 @@ function customTransport( logData )
 {
     logData.level;             // The log level, 'info', 'warn', etc
     logData.messages;          // The message parts (as an array)
+    logData.errror;            // The error object, if that was the last
+                               // argument.
     logData.meta;              // The last argument to log() if it's an
                                // object or array, and not covered by a '%s'.
     logData.prefix;            // The prefix ('foo' in this example)
