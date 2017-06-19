@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"experimentalDecorators": true,
+		"lib": [ "es2015", "es2017", "dom" ],
+		"outDir": "dist",
+		"pretty": true,
+		"sourceMap": true,
+		"module": "CommonJS",
+		"target": "es5"
+	},
+	"include": [
+		"node.ts",
+		"browser.ts",
+		"lib"
+	]
+}

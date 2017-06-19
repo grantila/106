@@ -9,8 +9,13 @@
     "url": "https://github.com/grantila/106.git"
   },
   "scripts": {
+    "build": "rm -rf dist/* && node_modules/.bin/tsc -p .",
     "test": "node_modules/.bin/mocha"
   },
+  "pre-commit": [
+    "build",
+    "test"
+  ],
   "keywords": [
     "log",
     "node",
@@ -23,9 +28,12 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
+    "@types/node": "^7.0.31",
     "mocha": "^2.4.5",
-    "timekeeper": "0.0.5"
+    "pre-commit": "1.x",
+    "timekeeper": "0.0.5",
+    "typescript": "2.4.x"
   },
-  "main": "./node.js",
-  "browser": "./browser.js"
+  "main": "./dist/node.js",
+  "browser": "./dist/browser.js"
 }
