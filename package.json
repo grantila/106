@@ -35,5 +35,6 @@
     "typescript": "2.4.x"
   },
   "main": "./dist/node.js",
-  "browser": "./dist/browser.js"
+  "browser": "./dist/browser.js",
+  "types": "./dist/browser.d.ts"
 }
