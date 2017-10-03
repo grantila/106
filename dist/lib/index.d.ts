@@ -6,8 +6,11 @@ declare let colors: boolean;
 export declare function setLevel(newLevel: Levels): void;
 export { level, colors, Sequence, Sequencer };
 export declare function addTransport(fn: any, opts: any): void;
+export interface PrefixedLogger {
+    [key: string]: (...args: any[]) => void;
+}
 export interface Logger {
-    (prefix: string): any;
+    (prefix: string): PrefixedLogger;
     Sequence: typeof Sequence;
     Sequencer: typeof Sequencer;
 }

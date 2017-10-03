@@ -80,14 +80,20 @@ export interface LogContext
 	;
 }
 */
+
+export interface PrefixedLogger
+{
+	[ key: string ]: ( ...args: any[] ) => void;
+}
+
 export interface Logger
 {
-	( prefix: string ): any;
+	( prefix: string ): PrefixedLogger;
 	Sequence: typeof Sequence;
 	Sequencer: typeof Sequencer;
 }
 
-export default function logger( backend )
+export default function logger( backend ): Logger
 {
 	function log( prefix: string )
 	{
