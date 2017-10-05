@@ -10,3 +10,5 @@ const logger = lib( browserLogger( ) );
 
 export { logger }
 export * from './lib/index'
+
+export default logger;

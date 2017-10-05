@@ -8,4 +8,5 @@ var index_1 = require("./lib/index");
 var logger = index_1.default(logger_browser_js_1.default());
 exports.logger = logger;
 __export(require("./lib/index"));
+exports.default = logger;
 //# sourceMappingURL=browser.js.map
