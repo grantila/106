@@ -7,7 +7,15 @@ import nodeLogger from './lib/logger-node.js'
 import lib, { Logger } from './lib/index'
 import * as extra from './lib/index'
 
-const logger = lib( nodeLogger( ) );
+const _glob = < any >global;
+const loggerInstance =
+	_glob.__106_instance__
+	? _glob.__106_instance__
+	: nodeLogger( );
+
+_glob.__106_instance__ = loggerInstance;
+
+const logger = lib( loggerInstance );
 for ( const key of Object.keys( extra ) )
 	logger[ key ] = extra[ key ];
 
