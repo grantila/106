@@ -1,3 +1,6 @@
+[![npm version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+
 # 106
 
 ### Log library with sequences and colors, for node.js and browsers
@@ -118,3 +121,8 @@ log.error( "This will be sent to the custom logger" );
 log.warn( "And this" );
 log.info( "But this won't" );
 ```
+
+[npm-image]: https://img.shields.io/npm/v/106.svg
+[npm-url]: https://npmjs.org/package/106
+[travis-image]: https://img.shields.io/travis/grantila/106.svg
+[travis-url]: https://travis-ci.org/grantila/106
