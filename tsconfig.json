@@ -10,6 +10,7 @@
 		"target": "es5"
 	},
 	"include": [
+		"ts-ignore.d.ts",
 		"node.ts",
 		"browser.ts",
 		"lib"

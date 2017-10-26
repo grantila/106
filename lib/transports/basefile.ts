@@ -36,7 +36,8 @@ function filterOptions( options: any = { } )
 	return options;
 }
 
-export default class BaseFile extends winston.transports.File
+export default class BaseFile
+extends ( winston.transports.File as { new( ...args ): any; } )
 {
 	static available( )
 	{

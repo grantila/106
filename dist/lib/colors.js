@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var ansiStyles = require("ansi-styles");
-var ansi2css = require("./ansi2css");
+var ansi2css = require("./ansi2css/index");
 exports.fg = {
     red: function (text) {
         return ansiStyles.red.open +

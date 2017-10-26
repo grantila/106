@@ -9,8 +9,9 @@
     "url": "https://github.com/grantila/106.git"
   },
   "scripts": {
-    "build": "rm -rf dist/* && node_modules/.bin/tsc -p .",
-    "test": "node_modules/.bin/mocha"
+    "build": "scripts/build.sh",
+    "test": "node_modules/.bin/mocha",
+    "buildtest": "npm run build && npm run test"
   },
   "pre-commit": [
     "build",
@@ -28,9 +29,13 @@
     "winston": "^2.1.1"
   },
   "devDependencies": {
+    "@types/ansi-styles": "^2.0.30",
     "@types/node": "^7.0.31",
     "mocha": "^2.4.5",
     "pre-commit": "1.x",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.50.0",
+    "rollup-plugin-commonjs": "^8.2.1",
     "timekeeper": "0.0.5",
     "typescript": "2.4.x"
   },

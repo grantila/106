@@ -2,7 +2,7 @@
 
 import * as ansiStyles from 'ansi-styles'
 
-import * as ansi2css from './ansi2css'
+import * as ansi2css from './ansi2css/index'
 
 
 export type Colorizer = ( text: string ) => string;

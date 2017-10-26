@@ -5,7 +5,8 @@ import * as winston from 'winston'
 import { parseLog, ParsedLog } from '../utils'
 
 
-export default class Console extends winston.transports.Console
+export default class Console
+extends ( winston.transports.Console as { new( ...args ): any; } )
 {
 	private level: string;
 
